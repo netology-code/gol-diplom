@@ -47,7 +47,7 @@
   * добавлять магазин
   * изменять магазин и категорию
 
-* Рекомендуется писать модульные тесты на обработчики
+### Рекомендуется писать модульные тесты на обработчики
 
 ## Этапы разработки
 
@@ -76,41 +76,41 @@
   | название |    тип     | обязательное | уникальное |
   | -------- | :--------: | :----------: | :--------: |
   |   id     |   `int`    |      да      |     да     |
-  | name   | `string` |      да      |    да     |
-  | createAt   |   `dateTime`   |      да      |    да     |
-  | updatedAt     |  `dateTime`  |      да      |    да     |
-  | UriName   |   `string`   |     да      |    нет     |
+  | name   | `varchar` |      да      |    да     |
+  | create_at   |   `timestamp`   |      да      |    да     |
+  | updated_at     |  `timestamp`  |      да      |    да     |
+  | uri_Name   |   `varchar`   |     да      |    нет     |
 
   Связка с товаром:
   
   | название |    тип     | обязательное | уникальное |
   | -------- | :--------: | :----------: | :--------: |
-  |   id     |   `int`    |      да      |     да     |
-  | categoryId   | `int` |      да      |    да     |
-  | productId   |   `int`   |      да      |    да     |
+  | category_id  | `int` |      да      |    да     |
+  | product_id   |   `int`   |      да      |    да     |
+
+  В данной таблице уникальность создается составным первичным ключом ил 2 полей
 
 #### Модель для магазинов:
 
   | название |    тип     | обязательное | уникальное |
   | -------- | :--------: | :----------: | :--------: |
   |   id     |   `int`    |      да      |     да     |
-  | name   | `string` |      да      |    нет     |
-  | createAt   |   `dateTime`   |      да      |    нет     |
-  | updatedAt     |  `dateTime`  |      да      |    нет     |
-  | Address   |   `string`   |     да      |    нет     |
-  | Lon   |   `string`   |     нет      |    нет     |
-  | Lat   |   `string`   |     нет      |    нет     |
-  | WorkingHours   |   `string`   |     нет      |    нет     | 
-  | ShopGuid   |   `uuid`   |     да      |    да     |
+  | name   | `varchar` |      да      |    нет     |
+  | create_at  |   `timestamp`   |      да      |    нет     |
+  | updated_at     |  `timestamp`  |      да      |    нет     |
+  | address   |   `varchar`   |     да      |    нет     |
+  | lon   |   `varchar`   |     нет      |    нет     |
+  | lat   |   `varchar`   |     нет      |    нет     |
+  | working_hours   |   `varchar`   |     нет      |    нет     |
 
   Связка с товаром:
-
+  
   | название |    тип     | обязательное | уникальное |
   | -------- | :--------: | :----------: | :--------: |
-  |   id     |   `int`    |      да      |     да     |
-  | shopId   | `int` |      да      |    да     |
-  | productId   |   `int`   |      да      |    да     |
+  | shop_id   | `int` |      да      |    да     |
+  | product_id   |   `int`   |      да      |    да     |
 
+В данной таблице уникальность создается составным первичным ключом ил 2 полей
 
 #### Модель для цен
 
@@ -120,14 +120,13 @@
   | название |    тип     | обязательное | уникальное |
   | -------- | :--------: | :----------: | :--------: |
   |   id     |   `int`    |      да      |     да     |
-  | SalePrice   | `string` |      да      |    нет     |
-  | FactoryPrice   |   `float`   |      да      |    нет     |
-  | DiscountPrice     |  `float`  |      да      |    нет     |
-  | createAt   |   `dateTime`   |     нет      |    нет     |
-  | updatedAt   |   `dateTime`   |     нет      |    нет     |
-  | IsActive   |   `bool`   |     да      |    нет     |
-  | PriceGuid   |   `uuid`   |     да      |    да     | 
-  | FkProduct   |   `int`   |     да      |    нет     | 
+  | sale_price   | `int` |      да      |    нет     |
+  | factory_price   |   `int`   |      да      |    нет     |
+  | discount_price     |  `int`  |      да      |    нет     |
+  | create_at   |   `timestamp`   |     нет      |    нет     |
+  | updated_at   |   `timestamp`   |     нет      |    нет     |
+  | is_active   |   `bool`   |     да      |    нет     |
+  | product_id   |   `int`   |     да      |    нет     | 
 
 
 #### Модель для товара
@@ -135,14 +134,14 @@
   | название |    тип     | обязательное | уникальное |
   | -------- | :--------: | :----------: | :--------: |
   |   id     |   `int`    |      да      |     да     |
-  | sku   | `string` |      да      |    нет     |
-  | name   |   `string`   |      да      |    нет     |
-  | type     |  `string`  |      да      |    нет     |
-  | uri   |   `string`   |     да      |    нет     |
-  | description   |   `string`   |     да      |    нет     |  
-  | IsActive   |   `bool`   |     да      |    нет     |  
-  | createAt   |   `dateTime`   |     да      |    нет     |
-  | updatedAt   |   `dateTime`   |     да      |    нет     |
+  | sku   | `varchar` |      да      |    нет     |
+  | name   |   `varchar`   |      да      |    нет     |
+  | type     |  `varchar`  |      да      |    нет     |
+  | uri   |   `varchar`   |     да      |    нет     |
+  | description   |   `varchar`   |     да      |    нет     |  
+  | is_active   |   `bool`   |     да      |    нет     |  
+  | create_at   |   `timestamp`   |     да      |    нет     |
+  | updated_at   |   `timestamp`   |     да      |    нет     |
 
     
 ### Этап 2. Создание бизнес логики и обработчиков
@@ -153,8 +152,8 @@
 * GET /api/v1/search
 * GET /api/v1/categories
 * GET /api/v1/shops
-* GET /api/v1/products_by_category
-* GET /api/v1/products_by_shop
+* GET /api/v1/categories/:category_id/products
+* GET /api/v1/shops/:shop/products
 * POST /api/v1/product
 * PUT /api/v1/product
 * POST /api/v1/category
@@ -169,20 +168,28 @@
 В ответ приходит  `json-объект` с данными:
 
 ```json
-{ "Total" : 1,
-  "Items": [{
-    "sku": "2074",
-    "name": "Кирпич",
-    "uri": "/product/brick-2074",
-    "description": "Кирпич",
-    "prices" : [{ "sale": 10.00,
-                  "factory": 2.00,
-                  "discount": 8.00
-    }]
-  }]
+{
+  "total": 1,
+  "items": [
+    {
+      "sku": "2074",
+      "name": "Кирпич",
+      "uri": "/product/brick-2074",
+      "description": "Кирпич",
+      "prices": [
+        {
+          "sale": 10.00,
+          "factory": 2.00,
+          "discount": 8.00
+        }
+      ]
+    }
+  ],
+  "status": "ok"
 }
 ```
-
+поле uri - содержит slug для продукта, состоящий из типа продукта и sku продукта, используется во фронт-энд сервисе
+формируется по формуле `/products/{тип продукта}-{sku}`
 если массива цен нет, то в json должен возвращаться пустой массив 
 
 #### Поиск продуктов
@@ -197,16 +204,24 @@
   В ответ приходит  `json-объект` с данными:
 
 ```json
-{ "Total" : 1,
-  "Items": [{
-    "sku": "2074",
-    "name": "Кирпич",
-    "uri": "/product/brick-2074",
-    "description": "Кирпич",
-    "prices" : [{ "sale": 10.00,
-      "factory": 2.00,
-      "discount": 8.00
-  }]
+{
+  "total": 1,
+  "items": [
+    {
+      "sku": "2074",
+      "name": "Кирпич",
+      "uri": "/product/brick-2074",
+      "description": "Кирпич",
+      "prices": [
+        {
+          "sale": 10.00,
+          "factory": 2.00,
+          "discount": 8.00
+        }
+      ]
+    }
+  ],
+  "status": "ok"
 }
 ```
 
@@ -215,56 +230,61 @@
   `GET /api/v1/categories` — все получить продукты из каталога
   В ответ приходит  `json-объект` с данными:
   ```json
-  
-  { "Total" : 2,  
-    "Items": [
+
+{
+  "total": 2,
+  "items": [
     {
-        "id":"2476",
-        "parent_id":"603",
-        "uri_name":"linoleum-2476",
-        "name":"Линолеум",
-
-
+      "id": "2476",
+      "parent_id": "603",
+      "uri_name": "linoleum-2476",
+      "name": "Линолеум"
     },
     {
-        "id":"2480",
-        "parent_id":"603",
-        "uri_name":"laminat-2480",
-        "name":"Ламинат",
-    }] 
-  }
+      "id": "2480",
+      "parent_id": "603",
+      "uri_name": "laminat-2480",
+      "name": "Ламинат"
+    }
+  ],
+  "status": "ok"
+}
   ```
+
+поле uri - содержит slug для категории, состоящий из названия категории и id категории, используется во фронт-энд сервисе
+формируется по формуле `{названия категории}-{id}`
 
 #### получение списка магазинов
   `GET /api/v1/shops` — все получить продукты из каталога
   В ответ приходит  `json-объект` с данными:
   ```json
-  {   "Total" : 2,  
-      "Items":[
+  {
+  "total": 2,
+  "items": [
     {
-        "name":"Магазин №1",
-        "address":" Ленина 1 стр 1",
-        "working_hours":"8:00-20:00",
-        "lon":"12.554764",
-        "lat":"12.554564",
-        "guid": "b5616a82-4637-4175-8d47-f27572a08c8e"
-
-
+      "id": "1",
+      "name": "Магазин №1",
+      "address": " Ленина 1 стр 1",
+      "working_hours": "8:00-20:00",
+      "lon": "12.554764",
+      "lat": "12.554564",
     },
     {
-        "name":"Магазин №2",
-        "address":" Ленина 2 стр 2",
-        "working_hours":"8:00-20:00",
-        "lon":"39.643151",
-        "lat":"-0.351560",
-        "guid": "7c294f0f-ea56-4928-8c53-68930384128a"
-    }] 
-  }
+      "id": "2",
+      "name": "Магазин №2",
+      "address": " Ленина 2 стр 2",
+      "working_hours": "8:00-20:00",
+      "lon": "39.643151",
+      "lat": "-0.351560",
+    }
+  ],
+  "status": "ok"
+}
   ```
 
 #### получение всех продуктов по категории
   выдает все активные продукты (у которых IsActive == true) 
-`GET /api/v1/products_by_category` — получить все продукты по категории
+`GET /api/v1/categories/:category_id/products` — получить все продукты по категории
   Параметры
   
   | название |    тип     | обязательное |
@@ -276,12 +296,12 @@
 
 #### получение всех продуктов по магазину
   выдает все активные продукты (у которых IsActive == true)
-  `GET /api/v1/products_by_shop` — получить все продукты по guid магазина
+  `GET /api/v1/shops/:shop_id/products` — получить все продукты по id магазина
   Параметры
 
   | название |    тип     | обязательное |
   | -------- | :--------: | :----------: |
-  | shop_guid   | `string` |      да      |
+  | shop_id   | `string` |      да      |
   
   Ответ аналогичен ответу `GET /api/v1/products`
 
@@ -296,7 +316,7 @@
     "name": "Кирпич 2",
     "uri": "/product/brick-2075",
     "description": "Кирпич 2", 
-    "shop_guid": "7c294f0f-ea56-4928-8c53-68930384128a",
+    "shop_id": "2",
     "category_id": "2480"
     }
 ```
@@ -304,16 +324,18 @@
 В ответ приходит либо сообщение об ошибке, либо JSON-объект с данными:
     
 ```json
-    { 
-      "Total" : 1,
-      "Items": [{
+    {
+  "total": 1,
+  "items": [
+    {
       "sku": "2075",
       "name": "Кирпич 2",
       "uri": "/product/brick-2075",
       "description": "Кирпич 2"
-      }],
-      "status": "ok"
     }
+  ],
+  "status": "ok"
+}
 ```
 
 ```json
@@ -337,17 +359,19 @@
 В ответ приходит либо сообщение об ошибке, либо JSON-объект с данными:
 
 ```json
-    { 
-      "Total" : 1,
-      "Items": [{
+    {
+  "total": 1,
+  "items": [
+    {
       "sku": "2075",
       "name": "Кирпич 2",
       "uri": "/product/brick-2075",
       "description": "Кирпич 2",
       "is_active": "False"
-      }],
-      "status": "ok"
     }
+  ],
+  "status": "ok"
+}
 ```
 
 ```json
