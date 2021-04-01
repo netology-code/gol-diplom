@@ -153,25 +153,15 @@
 * GET /api/v1/products
 * POST /api/v1/products
 * PUT /api/v1/products
-  
-
 * GET /api/v1/search
-  
-
 * GET /api/v1/categories
 * POST /api/v1/categories
 * PUT /api/v1/categories
-  
-
 * GET /api/v1/shops
 * POST /api/v1/shops
 * PUT /api/v1/shops
-  
-
 * GET /api/v1/categories/:category_id/products
 * GET /api/v1/shops/:shop/products
-  
-
 * POST /api/v1/prices
 * PUT /api/v1/prices
 
@@ -323,7 +313,7 @@
    
    **Внимание! Категория и Магазин уже должны быть созданы**
    
-`POST /api/v1/product` - добавляет продукт
+`POST /api/v1/products` - добавляет продукт
 ```json
     {
     "sku": "2075",
@@ -358,7 +348,7 @@
 ```
 
 #### Обновление продукта
-`PUT /api/v1/product` - обновляет продукт
+`PUT /api/v1/products` - обновляет продукт
    
 Обязательное поле sku
 ```json
