@@ -151,19 +151,29 @@
 #### Необходимо реализовать следующие маршруты:
 
 * GET /api/v1/products
+* POST /api/v1/products
+* PUT /api/v1/products
+  
+
 * GET /api/v1/search
+  
+
 * GET /api/v1/categories
+* POST /api/v1/categories
+* PUT /api/v1/categories
+  
+
 * GET /api/v1/shops
+* POST /api/v1/shops
+* PUT /api/v1/shops
+  
+
 * GET /api/v1/categories/:category_id/products
 * GET /api/v1/shops/:shop/products
-* POST /api/v1/product
-* PUT /api/v1/product
-* POST /api/v1/category
-* PUT /api/v1/category
-* POST /api/v1/shop
-* PUT /api/v1/shop
-* POST /api/v1/price
-* PUT /api/v1/price
+  
+
+* POST /api/v1/prices
+* PUT /api/v1/prices
 
 #### Получение продуктов
 `GET /api/v1/products` — получить все продукты из каталога.
@@ -187,8 +197,7 @@
         }
       ]
     }
-  ],
-  "status": "ok"
+  ]
 }
 ```
 Поле uri содержит slug для продукта, состоящий из типа продукта и sku продукта, используется во фронтэнд-сервисе и 
@@ -224,8 +233,7 @@
         }
       ]
     }
-  ],
-  "status": "ok"
+  ]
 }
 ```
 
@@ -251,8 +259,7 @@
       "uri_name": "laminat-2480",
       "name": "Ламинат"
     }
-  ],
-  "status": "ok"
+  ]
 }
   ```
 
@@ -283,8 +290,7 @@
       "lon": "39.643151",
       "lat": "-0.351560",
     }
-  ],
-  "status": "ok"
+  ]
 }
   ```
 
@@ -341,15 +347,13 @@
       "uri": "/product/brick-2075",
       "description": "Кирпич 2"
     }
-  ],
-  "status": "ok"
+  ]
 }
 ```
 
 ```json
     {
-      "error": "что то пошло не так",
-      "status": "error"
+      "error": "что то пошло не так"
     }
 ```
 
@@ -377,15 +381,13 @@
       "description": "Кирпич 2",
       "is_active": "False"
     }
-  ],
-  "status": "ok"
+  ]
 }
 ```
 
 ```json
     {
-      "error": "что то пошло не так",
-      "status": "error"
+      "error": "что то пошло не так"
     }
 ```
 
