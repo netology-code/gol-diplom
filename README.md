@@ -76,8 +76,8 @@
   | -------- | :--------: | :----------: | :--------: |
   |   id     |   `int`    |      да      |     да     |
   | name   | `varchar` |      да      |    да     |
-  | create_at   |   `timestamp`   |      да      |    да     |
-  | updated_at     |  `timestamp`  |      да      |    да     |
+  | create_at   |   `timestamp`   |      да      |    нет     |
+  | updated_at     |  `timestamp`  |      да      |    нет     |
   | uri_name   |   `varchar`   |     да      |    нет     |
 
 
@@ -128,7 +128,7 @@
   | create_at   |   `timestamp`   |     нет      |    нет     |
   | updated_at   |   `timestamp`   |     нет      |    нет     |
   | is_active   |   `bool`   |     да      |    нет     |
-  | product_id   |   `int`   |     да      |    нет     | 
+  | product_id   |   `uuid`   |     да      |    нет     | 
 
  
 #### Модель для товара
