@@ -239,13 +239,11 @@
   "items": [
     {
       "id": "2476",
-      "parent_id": "603",
       "uri_name": "linoleum-2476",
       "name": "Линолеум"
     },
     {
       "id": "2480",
-      "parent_id": "603",
       "uri_name": "laminat-2480",
       "name": "Ламинат"
     }
